@@ -1,9 +1,12 @@
 # Http Proxy Parser
 
+##Requirements
+    $ node version - v12.17.0 (or close to it)
+    $ typescript
+    $ yarn or npm
 
 ## Install
 
-    $ git clone https://github.com/YOUR_USERNAME/PROJECT_TITLE
     $ cd PROJECT_TITLE
     $ yarn install
     
