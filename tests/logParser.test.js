@@ -48,7 +48,7 @@ describe('Appearence Counter test =>', () => {
         assert.deepEqual(entryCounts,logFileOutput)
     });
 
-    it('returns object with entry counts from json (e.g. for HTTP request)', async () => {
+    it('returns object with entry counts from JSON (e.g. for HTTP request)', async () => {
         let hostsAppeareceCounter = new logParser('csHost');
         const logs = [
             {ip: "127.0.0.1", csHost: 'google.com'},
@@ -63,7 +63,7 @@ describe('Appearence Counter test =>', () => {
         assert.deepEqual(entryCounts,output)
     });
 
-    it('returns object with entry counts from json (e.g. for HTTP request)', async () => {
+    it('returns object with entry counts from JSON (e.g. for HTTP request)', async () => {
         let hostsAppeareceCounter = new logParser('csHost');
         const logs = [
             "127.0.0.1 google.com",
@@ -79,7 +79,7 @@ describe('Appearence Counter test =>', () => {
     });
 
 
-    it('returns object with entry counts from json when some wors has missing fields', async () => {
+    it('returns object with entry counts from JSON when some rows has missing fields', async () => {
         let hostsAppeareceCounter = new logParser('user');
         const logs = [
             {ip: "127.0.0.1", csHost: 'google.com', user: 'mkhusid'},
