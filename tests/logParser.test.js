@@ -78,6 +78,22 @@ describe('Appearence Counter test =>', () => {
         assert.deepEqual(entryCounts,output)
     });
 
+
+    it('returns object with entry counts from json when some wors has missing fields', async () => {
+        let hostsAppeareceCounter = new logParser('user');
+        const logs = [
+            {ip: "127.0.0.1", csHost: 'google.com', user: 'mkhusid'},
+            {ip: "127.0.0.1", csHost: 'facebook.com'},
+            {ip: "127.0.0.1", csHost: 'google.com', user: 'anonymous'},
+            {ip: "127.0.0.1", csHost: 'facebook.com', user: 'mkhusid'},
+        ]
+        const output = {mkhusid: 2, anonymous: 1}
+        const entryCounts =  hostsAppeareceCounter.countAppearence(logs)
+        assert.deepEqual(entryCounts,output)
+
+    });
+
+
     it('should throw "wrong rows type" error', async () => {
         const hostsAppeareceCounter = new logParser('cs-host');
         const logs = `'google.com','facebook.com','gmail.com'`
@@ -91,7 +107,7 @@ describe('Appearence Counter test =>', () => {
         }
     });
 
-    it('should throw "wrong rows type" error', async () => {
+    it('should throw "wrong row type" error', async () => {
         const hostsAppeareceCounter = new logParser('cs-host');
         const logs = [1,2,3]
         try {
@@ -111,20 +127,6 @@ describe('Appearence Counter test =>', () => {
             expect( e => expect(() => {throw e}).to.throw(ReferenceError))
             console.log(e.message)
         }
-    });
-
-    it('should throw "field not found" error', async () => {
-        let hostsAppeareceCounter = new logParser('user');
-        const logs = [
-            {ip: "127.0.0.1", csHost: 'google.com', user: 'mkhusid'},
-            {ip: "127.0.0.1", csHost: 'facebook.com'},
-            {ip: "127.0.0.1", csHost: 'google.com', user: 'anonymous'},
-            {ip: "127.0.0.1", csHost: 'facebook.com', user: 'mkhusid'},
-        ]
-        const output = {mkhusid: 2, anonymous: 1}
-        const entryCounts =  hostsAppeareceCounter.countAppearence(logs)
-        assert.deepEqual(entryCounts,output)
-
     });
 
     it('should throw "field not found" error', async () => {
