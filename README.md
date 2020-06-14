@@ -15,3 +15,6 @@
 
     $ yarn start log_example.log
 
+## Run unit tests
+
+    $ yarn test
