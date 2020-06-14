@@ -1,0 +1,10 @@
+{
+    "compilerOptions": {
+        "outDir": "./build",
+        "allowJs": true,
+        "target": "es2019"
+    },
+    "include": [
+        "./src/**/*"
+    ]
+}

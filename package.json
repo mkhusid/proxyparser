@@ -1,0 +1,22 @@
+{
+  "requires": true,
+  "lockfileVersion": 1,
+  "dependencies": {
+    "@types/node": "^14.0.13",
+    "chai": "4.2.0",
+    "cross-env": "5.2.0",
+    "mocha": "6.2.0",
+    "nyc": "14.1.1"
+  },
+  "name": "fairtility-logparser",
+  "version": "1.0.0",
+  "description": "Parser for HTTP Web Proxy Logs ",
+  "main": "build/index.js",
+  "scripts": {
+    "test": "mocha tests/**/*.js",
+    "start": "node build/index.js",
+    "build": "tsc"
+  },
+  "author": "Max Khusid",
+  "license": "MIT"
+}
