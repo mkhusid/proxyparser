@@ -7,11 +7,11 @@
     $ cd PROJECT_TITLE
     $ yarn install
     
-## Make build firstly
+## Build before runnig the script
 
     $ yarn build
 
-## Runn the app with specified log file path
+## Runn the script with specified log file path
 
     $ yarn start log_example.log
 
