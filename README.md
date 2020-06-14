@@ -1,4 +1,4 @@
-# httpProxyParser
+# Http Proxy Parser
 
 
 ## Install
