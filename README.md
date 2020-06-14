@@ -11,7 +11,7 @@
 
     $ yarn build
 
-## Runn the script with specified log file path
+## Run the script with specified log file path
 
     $ yarn start log_example.log
 
